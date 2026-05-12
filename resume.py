@@ -52,10 +52,11 @@ def create_pdf_with_puppeteer():
         pdf_content = asyncio.run(generate_pdf())
         
         # Save PDF
-        with open('resume.pdf', 'wb') as f:
+        pdf_filename = "PrashantBathula.pdf"
+        with open(pdf_filename, 'wb') as f:
             f.write(pdf_content)
         
-        print("PDF created successfully: resume.pdf")
+        print(f"PDF created successfully: {pdf_filename}")
         return True
         
     except ImportError:
@@ -80,9 +81,10 @@ def create_pdf_with_weasyprint():
             html_content = f.read()
         
         # Create PDF
-        weasyprint.HTML(string=html_content, base_url='.').write_pdf('resume.pdf')
+        pdf_filename = "PrashantBathula.pdf"
+        weasyprint.HTML(string=html_content, base_url='.').write_pdf(pdf_filename)
         
-        print("PDF created successfully: resume.pdf")
+        print(f"PDF created successfully: {pdf_filename}")
         return True
         
     except ImportError:
@@ -105,7 +107,8 @@ def create_simple_pdf():
         
         print("Creating simple text-based PDF...")
         
-        c = canvas.Canvas("resume.pdf", pagesize=letter)
+        pdf_filename = "PrashantBathula.pdf"
+        c = canvas.Canvas(pdf_filename, pagesize=letter)
         
         # Title
         c.setFont("Helvetica-Bold", 24)
@@ -160,7 +163,7 @@ environments, ensuring consistent and repeatable deployments.
                 y_position = 10.5*inch
         
         c.save()
-        print("Simple PDF created successfully: resume.pdf")
+        print(f"Simple PDF created successfully: {pdf_filename}")
         return True
         
     except ImportError:
