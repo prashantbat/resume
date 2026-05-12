@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Bathula - DevOps SRE & Technical Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .resume-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            border: 4px solid white;
+        }
+        
+        .name {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            width: 24px;
+            height: 24px;
+            background: #3498db;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+        }
+        
+        .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .company-name {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 3px;
+        }
+        
+        .position {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .responsibilities {
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 3px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .skill-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .certifications {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .cert-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+        }
+        
+        .download-btn {
+            background: white;
+            color: #27ae60;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume-card">
+            <div class="header">
+                <div class="profile-img">PB</div>
+                <h1 class="name">Prashant Bathula</h1>
+                <p class="title">DevOps SRE & Technical Architect</p>
+                <div class="contact-info">
+                    <div class="contact-item">📱 +91 9867032410</div>
+                    <div class="contact-item">✉️ prashantbathula1993@gmail.com</div>
+                    <div class="contact-item">💼 https://www.linkedin.com/in/prashant-bathula</div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">📋</div>
+                        Experience Summary
+                    </div>
+                    <div class="responsibilities">
+                        <p>10+ years of IT experience in Advanced DevOps technologies, Kubernetes, Openshift Admin, Various cloud technologies. Designed and maintained CI/CD pipelines using GitLab to automate build, test, and deployment processes for enterprise applications. Implemented Infrastructure as Code (IaC) using Terraform to provision and manage cloud infrastructure environments, ensuring consistent and repeatable deployments. Designed and managed containerized workloads using Docker/Podman and deployed scalable services using Kubernetes for improved portability and scalability.</p>
+                        <br>
+                        <p>Successfully implemented Performance Acceptance Test, High Availability and Disaster Recovery Sign off for a hefty workload of 90M customers. Implemented comprehensive observability platform with Prometheus, Grafana, EFK stack. Architected and maintained containerized workload deployments on Kubernetes, utilizing Helm for package management, release orchestration. Strong understanding of multi-cloud networking architectures across Amazon Web Services and Google Cloud Platform, including VPC design, Internet Gateways, NAT Gateways, private/public subnet routing, and multi-region connectivity patterns for highly available deployment.</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">💼</div>
+                        Professional Experience
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="company-name">Oracle Solution Services India</div>
+                        <div class="position">TA Lead (Technical Architecture Lead)</div>
+                        <div class="duration">March 2022 - Present</div>
+                        <div class="responsibilities">
+                            <ul class="skill-list">
+                                <li>Provision Cloud Infra Resources to Product Engg via Terraform</li>
+                                <li>Plan BRM Cloud Native Infrastructure, deployments</li>
+                                <li>Implement E2E monitoring, Security best practices</li>
+                                <li>Create and tune CI/CD pipelines to Implement E2E Automation along sanity test automation</li>
+                                <li>Implement and Plan Go live of Telecom Malaysia/Pakistan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="company-name">BLUE ROSE TECHNOLOGIES SDN BHD (Malaysia)</div>
+                        <div class="position">Senior Consultant</div>
+                        <div class="duration">February 2020 - December 2021</div>
+                        <div class="responsibilities">
+                            <ul class="skill-list">
+                                <li>Oracle Cloud Infrastructure Provisioning</li>
+                                <li>Scaled Jenkins Automation pipe to enhance CI/CD and smoothen the ongoing deployment mechanism</li>
+                                <li>Run and support Performance and HA test to fine tune applications</li>
+                                <li>Migration of Existing On premise workload to Cloud native Solution, along with Monitoring and Visualization Stack</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="company-name">Clover Infotech (Mumbai)</div>
+                        <div class="position">Senior Consultant</div>
+                        <div class="duration">November 2018 - January 2020</div>
+                        <div class="responsibilities">
+                            <ul class="skill-list">
+                                <li>Handling Complete Middleware stack of Axis Bank, involves end to end installation and integration of all products of Middleware</li>
+                                <li>Handling critical Finacle services and daily monitoring and deployment</li>
+                                <li>Installation of products like Oracle Weblogic, Oracle HTTP server, IBM WebSphere, IBM HTTP server, Apache HTTP server, Apache tomcat, JBOSS</li>
+                                <li>Implemented SonarQube for Code Quality Analysis</li>
+                                <li>Workload deployment on Cloud Native Weblogic using Helm</li>
+                                <li>Performing end to end SSL implementation one/two way SSL involving Traefik/Nginx</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="company-name">L&T Infotech (Mumbai)</div>
+                        <div class="position">IT Consultant</div>
+                        <div class="duration">July 2015 - November 2018</div>
+                        <div class="responsibilities">
+                            <ul class="skill-list">
+                                <li>Statoil ASA Implementation: Implementing various middleware cluster deployments across multiple projects</li>
+                                <li>Implemented Containerization of Java workload, to enable Microservice methodologies</li>
+                                <li>Implemented CI/CD pipelines for various products to enhance productivity</li>
+                                <li>Migrated On-Premise Workload to OCI</li>
+                                <li>Reduced manual effort Using Bash Shell scripting for Batch Jobs for Billing</li>
+                                <li>Configured Prometheus/Grafana, ELK stack for monitoring and logging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">🛠️</div>
+                        Technical Skills
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Domains</h4>
+                            <ul class="skill-list">
+                                <li>Telecom</li>
+                                <li>Banking</li>
+                                <li>Oil & Gas/Retail</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>CI/CD</h4>
+                            <ul class="skill-list">
+                                <li>Jenkins</li>
+                                <li>GitLab CI</li>
+                                <li>SonarQube</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>IaC</h4>
+                            <ul class="skill-list">
+                                <li>Terraform</li>
+                                <li>Cloud Native</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Containers</h4>
+                            <ul class="skill-list">
+                                <li>Docker</li>
+                                <li>Kubernetes</li>
+                                <li>Podman</li>
+                                <li>Helm</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Cloud Platforms</h4>
+                            <ul class="skill-list">
+                                <li>OCI (Oracle Cloud)</li>
+                                <li>AWS</li>
+                                <li>GCP</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Automation</h4>
+                            <ul class="skill-list">
+                                <li>Bash</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Monitoring</h4>
+                            <ul class="skill-list">
+                                <li>Prometheus</li>
+                                <li>Grafana</li>
+                                <li>EFK Stack</li>
+                                <li>ELK Stack</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Orchestration</h4>
+                            <ul class="skill-list">
+                                <li>Helm</li>
+                                <li>Kubernetes Operators</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">🏆</div>
+                        Certifications
+                    </div>
+                    <div class="certifications">
+                        <div class="cert-item">
+                            <strong>Certified Kubernetes Admin (CKA)</strong> - 27th March 2024
+                        </div>
+                        <div class="cert-item">
+                            <strong>Oracle Cloud Infrastructure Architect Associate</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">🎓</div>
+                        Education
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-name">BE in Electronics and Telecommunication Engineering</div>
+                        <div class="position">University of Mumbai</div>
+                        <div class="duration">2011-2015 (June)</div>
+                        <div class="responsibilities">
+                            <p>Percentage: 65% | Country of Education: INDIA</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-name">HSC - Maharashtra Board (Science)</div>
+                        <div class="position">Secondary School Certificate</div>
+                        <div class="responsibilities">
+                            <p>Percentage: 88%</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="company-name">SSC - Maharashtra Board</div>
+                        <div class="position">Secondary School Certificate</div>
+                        <div class="responsibilities">
+                            <p>Percentage: 91.07%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <div class="section-icon">👤</div>
+                        Personal Details
+                    </div>
+                    <div class="responsibilities">
+                        <p><strong>Marital Status:</strong> Married</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="download-section">
+                <h2>Download Resume</h2>
+                <p>Get the complete PDF version of my resume</p>
+                <a href="resume.pdf" class="download-btn" download>
+                    <span>📄</span>
+                    Download Resume (PDF)
+                </a>
+            </div>
+            
+            <div class="footer">
+                <p>&copy; 2026 Prashant Bathula | DevOps SRE & Technical Architect</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
